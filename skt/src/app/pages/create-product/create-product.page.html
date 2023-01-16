@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons>
+      <ion-menu-button> </ion-menu-button>
+      <ion-title>New Register</ion-title>
+      <div>
+        <ion-button fill="clear" size="small">
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-thumbnail class="user-image">
+  <img src="/assets/image/avatar1.png" alt="">
+ </ion-thumbnail>
+ <ion-row class="photo-wrapper">
+  <ion-button fill="clear">Add Photo</ion-button>
+</ion-row>
+  <form [formGroup]="productForm" #productFormGroupDirective="ngForm"
+  (ngSubmit)="createProduct(productForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Name:</ion-label>
+        <ion-input formControlName="name" inputmode="text" clearInput="true" required></ion-input>
+      </ion-item>
+
+     <ion-item>
+            <ion-label position="stacked">Amount Purchase:</ion-label>
+            <ion-input
+              formControlName="amountPurchase"
+              inputmode="number"
+              clearInput="true"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Amount Sold:</ion-label>
+            <ion-input
+              formControlName="amountSold"
+              (change)="calc2()"
+              inputmode="number"
+              clearInput="true"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Stock:</ion-label>
+            <ion-input
+              formControlName="stock"
+              inputmode="number"
+              clearInput="true"
+              required
+            ></ion-input>
+          </ion-item>
+
+      <ion-item>
+            <ion-label position="stacked">Purchase Price:</ion-label>
+            <ion-input
+              formControlName="purchasePrice"
+              inputmode="number"
+              clearInput="true"
+              required
+            ></ion-input>
+          </ion-item>
+
+      <ion-item>
+            <ion-label for="" position="stacked">Percentage:</ion-label>
+            <ion-input
+              inputmode="number"
+              clearInput="true"
+              formControlName="percentage"
+              (change)="calc()"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Sale Value:</ion-label>
+            <ion-input
+              formControlName="saleValue"
+              inputmode="number"
+              clearInput="true"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Phone:</ion-label>
+            <ion-input
+              formControlName="phone"
+              inputmode="text"
+              clearInput="true"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Supplier:</ion-label>
+            <ion-input
+              formControlName="supplier"
+              inputmode="text"
+              clearInput="true"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">CNPJ:</ion-label>
+            <ion-input formControlName="cnpj" inputmode="text"
+            clearInput="true" required></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-buttons>
+              <ion-button type="submit">Save</ion-button>
+            </ion-buttons>
+           </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

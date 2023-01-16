@@ -1,0 +1,25 @@
+<div class="login-wrapper">
+  <div class="center" size-xs="10" size-sm="6" size-md="4" size-lg="3">
+    <ion-img class="logo" src="/assets/image/logo.png" alt="logo"></ion-img>
+    <h6 class="titulo">Loja Skate Club</h6>
+    <small>Faça seu Cadastro</small>
+    <form #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)">
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" name="name" ngModel placeholder="Enter name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" name="email" ngModel placeholder="Enter email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" name="password" ngModel placeholder="Enter password"></ion-input>
+      </ion-item>
+      <div class="buttons">
+        <ion-button expand="block" color="primary" type="submit">Registrar</ion-button>
+        <ion-button routerLink="/" expand="block" color="secondary">Login</ion-button>
+      </div>
+    </form>
+  </div>
+</div>

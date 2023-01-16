@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons>
+      <ion-menu-button> </ion-menu-button>
+      <ion-title>Orders</ion-title>     
+    </ion-buttons>    
+    <ion-icon name="notifications" slot="end"></ion-icon>
+    <ion-badge id="notifications-badge-msg" color="danger">2</ion-badge>
+    <ion-icon name="cart" slot="end"></ion-icon>
+    <ion-badge id="notifications-badge" color="danger">4</ion-badge>
+    <img slot="end" src="/assets/image/logo.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="top">
+    <ion-segment value="upcoming" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="upcoming">
+        <ion-label>UpComing</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="past">
+        <ion-label>Past Orders</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div *ngFor="let order of orders">
+    <p id="date">{{order.date}}</p>
+    <div class="upperBox" *ngFor="let Singleorder of order.order">
+      <div class="image">
+        <img src="/assets/image/{{Singleorder.image}}" alt="">
+      </div>
+      <div class="title">
+        <h3>{{Singleorder.title}}</h3>
+      </div>
+      <div class="menu">
+        <ion-icon name="ellipsis-vertical-outline" (click)="presentPopover($event)"></ion-icon>
+      </div>
+      <div class="orderId">
+        <p>Order ID: #{{Singleorder.transId}}</p>
+      </div>
+      <div class="price">
+        <h3>${{Singleorder.price}}</h3>
+      </div>
+      <div class="status">
+        <p [ngStyle]="{'color': (Singleorder.status === 'CONFIRM') ? 'green' : 'red', 'background': (Singleorder.status === 'CONFIRM') ? '#e4f4eb' : '#f7d0c7'}">
+          {{Singleorder.status}}
+        </p>
+      </div>
+      <div class="edit">
+        <button class="btn" type="submit">Reorder</button>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>

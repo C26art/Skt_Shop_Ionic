@@ -1,0 +1,28 @@
+.login-wrapper
+{
+    display: flex;
+    margin-top: 30px;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+
+}
+small{
+    font-size: 16px;
+    color: #222;
+}
+.logo{
+    width: 11vh;
+    margin: 0 auto;
+}
+.titulo{
+    margin: 20px 0 10px 0;
+    font-size: 22px;
+    color: #da2644;
+}
+form{
+    margin-top: 30px;
+}
+.buttons{
+    margin-top: 30px;
+}
